@@ -41,6 +41,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(flash());
 
 
 // Express View engine setup
@@ -86,9 +87,11 @@ passport.deserializeUser((id, cb) => {
 });
 
 passport.use(new LocalStrategy({
-  passReqToCallback: true
-}, (req, email, password, next) => {
-  User.findOne({ email }, (err, user) => {
+  usernameField : 'email',
+  passwordField : 'password',
+  passReqToCallback : true 
+}, (req, username, password, next) => {
+  User.findOne({ email: username }, (err, user) => {
     if (err) {
       return next(err);
     }
