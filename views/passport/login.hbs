@@ -1,0 +1,42 @@
+<body bgcolor="#F7F7F7">
+
+
+<div class="navbar">
+  <img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo">
+  <button class="primaryOutline" href="./passport/login.hbs">LOG IN</button>
+</div>
+
+
+<div class="signupContainer container">
+
+  <div class="sectionHeader row">
+    <h2>Welcome back. We missed you!</h2>
+  </div>
+  
+  <form action="/login" method="POST" class="form-container row col-sm-auto">
+
+    {{#if message}}
+      <div class="error-message" id="error-message">{{ message }}</div>
+    {{/if}}
+
+    <div class="emailRow formRow">
+      <label for="email">Email</label>
+      <input id="email" type="text" name="email" placeholder="e.g., ilovecircuits@email.com">
+    </div>
+
+    <div class="passwordRow formRow">
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password" placeholder="Create a strong password">
+    </div>
+
+    <button class="primaryFill signup" id="signupButton">Sign Up</button>
+
+    <p>Already have an account? <a href="/login">Login</a></p>
+    {{!-- <p>By clicking the sign up button you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p> --}}
+  </form>
+
+
+</div>
+
+
+</body>

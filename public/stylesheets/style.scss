@@ -46,7 +46,18 @@ a {
 
 .sectionHeader {
   text-align: center;
+  justify-content: center;
 }
+
+.error-message {
+  background: #FF3030;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  margin: 0px auto;
+  padding: 20px;
+  width: 100%;
+}
+
 
 
 // Buttons
@@ -76,6 +87,18 @@ a {
 
 .primaryFill {
   border: 2px solid #D9FF00;
+  background-color: #D9FF00;
+  color: #141E14;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.primaryFill:hover {
+  border: 2px solid #141E14;
   background-color: #D9FF00;
   color: #141E14;
   padding-left: 50px;
@@ -125,10 +148,11 @@ a {
 
 // Footer CSS
 .footer {
-  position: absolute;
-  bottom: 0;
+  // position: absolute;
+  // bottom: 0;
   width: 100%;
   height: 60px; 
+  margin-top: 100px;
 }
 
 .footer hr {
@@ -176,31 +200,43 @@ a {
   margin-bottom: 60px;
 }
 
-#signup-form-container {
+.form-container {
   border: 1px solid #BBBBBB;
   background-color: #FFFFFF;
   margin: 0 auto;
   width: 50%;
-  // display: flex;
   justify-content: center;
   align-items: center;
   padding: 60px 60px;
 }
 
-#signup-form-container label {
+.form-container label {
   font-size: 18px;
   font-weight: 700;
   display: block;
 }
 
-#signup-form-container input {
+.form-container input {
   height: 40px;
   width: 250px;
   border: 1px solid #BBBBBB;
-  color: #F7F7F7;
+  color: #141E14;
   font-size: 14px;
+  font-weight: 300;
   padding-left: 15px;
   display: block;
+}
+
+.form-container p {
+  font-size: 14px;
+  color: #BBBBBB;
+  font-weight: 300;
+  margin: 0 0;
+}
+
+.form-container button {
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 .formRow {
@@ -208,7 +244,16 @@ a {
 }
 
 .nameRow {
-  display: flex;
+  // display: flex;
   justify-content: space-between;
+  // width: 100%;
+}
+
+.emailRow {
+  // width: 100%;
+}
+
+.passwordRow {
+  // width: 100%;
 }
 

@@ -7,24 +7,26 @@
 </div>
 
 
-<div class="signupContainer">
+<div class="signupContainer container">
 
-  <div class="sectionHeader">
+  <div class="sectionHeader row">
     <h2>Create your Circuit account.</h2>
   </div>
   
-  <form action="/signup" method="POST" id="signup-form-container">
+  <form action="/signup" method="POST" class="form-container row col-sm-auto">
 
-    <div class="nameRow formRow">
-      <div class="name">
-        <label for="firstname">First Name</label>
-        <input id="firstname" type="text" name="firstname" placeholder="e.g., Ivanna">
-      </div>
+    {{#if message}}
+      <div class="error-message" id="error-message">{{ message }}</div>
+    {{/if}}
 
-      <div class="name">
-        <label for="lastname">Last Name</label>
-        <input id="lastname" type="text" name="lastname" placeholder="e.g., Workout">
-      </div>
+    <div class="name nameRow formRow">
+      <label for="firstname">First Name</label>
+      <input id="firstname" type="text" name="firstname" placeholder="e.g., Ivanna">
+    </div>
+
+    <div class="name nameRow formRow">
+      <label for="lastname">Last Name</label>
+      <input id="lastname" type="text" name="lastname" placeholder="e.g., Workout">
     </div>
 
     <div class="emailRow formRow">
@@ -37,11 +39,12 @@
       <input id="password" type="password" name="password" placeholder="Create a strong password">
     </div>
 
-    <button class="primaryFill signup">Sign Up</button>
+    <button class="primaryFill signup" id="signupButton">Sign Up</button>
+
+    <p>Already have an account? <a href="/login">Login</a></p>
+    {{!-- <p>By clicking the sign up button you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p> --}}
   </form>
 
-  <p>Already have an account? <a href="/login">Login</a></p>
-  {{!-- <p>By clicking the sign up button you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p> --}}
 
 </div>
 

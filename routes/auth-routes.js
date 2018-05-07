@@ -16,22 +16,36 @@ const bcryptSalt     = 10;
 //   res.render("passport/private", { user: req.user });
 // });
 
-router.get("/signup", (req, res) => {
+router.get("/signup", (req, res, next) => {
   res.render("passport/signup")
 });
 
 router.post("/signup", (req, res, next) => {
-  const username = req.body.username;
+  console.log(req);
+  const firstname = req.body.firstname;
+  const lastname = req.body.lastname;
+  const email = req.body.email;
   const password = req.body.password;
 
-  if (username === "" || password === "") {
-    res.render("passport/signup", { message: "Indicate username and password" });
+  if (firstname === "" && lastname === "" && email === "" && password === "") {
+    res.render("passport/signup", { message: "Name, email, and password are all required." });
     return;
   }
 
-  User.findOne({ username }, "username", (err, user) => {
+  if (firstname === "" || lastname === "") {
+    res.render("passport/signup", { message: "Please enter your first and last name too." });
+    return;
+  }
+
+  if (email === "" || password === "") {
+    res.render("passport/signup", { message: "You need a valid email and password to sign up." });
+    return;
+  }
+
+
+  User.findOne({ email }, "email", (err, user) => {
     if (user !== null) {
-      res.render("passport/signup", { message: "The username already exists" });
+      res.render("passport/signup", { message: "There is already an account using that email. Try logging in." });
       return;
     }
 
@@ -39,7 +53,9 @@ router.post("/signup", (req, res, next) => {
     const hashPass = bcrypt.hashSync(password, salt);
 
     const newUser = new User({
-      username,
+      firstname: firstname,
+      lastname: lastname,
+      email: email,
       password: hashPass
     });
     newUser.save((err) => {
@@ -51,6 +67,7 @@ router.post("/signup", (req, res, next) => {
     });
   });
 });
+
 
 router.get("/login", (req, res, next) => {
   res.render("passport/login", { "message": req.flash("error") });
