@@ -2,8 +2,8 @@
 
 
 <div class="navbar">
-  <img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo">
-  <button class="primaryOutline" href="./passport/login.hbs">LOG IN</button>
+  <a href="/"><img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo"></a>
+  <button class="primaryOutline" href="/login">LOG IN</button>
 </div>
 
 
@@ -29,9 +29,11 @@
       <input id="password" type="password" name="password" placeholder="Create a strong password">
     </div>
 
-    <button class="primaryFill signup" id="signupButton">Sign Up</button>
+    <button class="primaryFill signup" id="signupButton">Log In</button>
 
-    <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+    {{!-- <p>Forgot your password? It happens.<a href="#"> Reset it.</a></p> --}}
+
+    <p>Don't have an account yet? <a href="/signup">Sign up now!</a></p>
     {{!-- <p>By clicking the sign up button you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p> --}}
   </form>
 

@@ -180,6 +180,8 @@ a {
 
 .footerContent h4 {
   margin: 0 0 0 0;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .withLove {
@@ -193,8 +195,25 @@ a {
 
 
 
-// Sign Up Page CSS
+// Landing Page CSS
+.carousel-item {
+  height: 500px;
+  align-items: center;
+}
 
+.carousel-item img { 
+  max-width: 100%; 
+  position: absolute;  
+  top: 10;  
+  bottom: 10;  
+  left: 0;  
+  right: 0;  
+  margin: auto;
+}
+
+
+
+// Sign Up Page CSS
 .signupContainer h2 {
   margin-top: 60px;
   margin-bottom: 60px;
@@ -218,13 +237,13 @@ a {
 
 .form-container input {
   height: 40px;
-  width: 250px;
+  width: 300px;
   border: 1px solid #BBBBBB;
   color: #141E14;
   font-size: 14px;
   font-weight: 300;
   padding-left: 15px;
-  display: block;
+  // display: block;
 }
 
 .form-container p {
@@ -245,7 +264,7 @@ a {
 
 .nameRow {
   // display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   // width: 100%;
 }
 

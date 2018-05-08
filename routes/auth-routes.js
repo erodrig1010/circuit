@@ -60,7 +60,7 @@ router.post("/signup", (req, res, next) => {
     });
     newUser.save((err) => {
       if (err) {
-        res.render("passport/signup", { message: "Something went wrong" });
+        res.render("passport/signup", { message: "Something went wrong. Try again." });
       } else {
         res.redirect("/");
       }
@@ -80,13 +80,20 @@ router.post("/login", passport.authenticate("local", {
   passReqToCallback: true
 }));
 
-
 router.get("/logout", (req, res, next) => {
-  // this destroys the session
-  req.session.destroy((err) => {
-    // cannot access session here
-    res.redirect("/login");
-  });
+  req.logout();
+  req.flash("success", "You have successfully logged out. See you soon!");
+  res.redirect("/login");
 });
+
+// router.get("/logout", (req, res, next) => {
+//   // this destroys the session
+//   req.session.destroy((err) => {
+//     // cannot access session here
+//     res.redirect("/login");
+//   });
+// });
+
+
 
 module.exports = router;

@@ -5,7 +5,8 @@ const userSchema = new Schema({
   firstname: { type: String, required: true},
   lastname: { type: String, required: true},
   email: { type: String, required: true, unique: true},
-  password: { type: String, required: true}
+  password: { type: String, required: true},
+  circuit: {type: mongoose.Schema.Types.ObjectId, ref: 'Circuit'}
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });

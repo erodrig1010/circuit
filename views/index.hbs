@@ -1,12 +1,32 @@
 <div class="navbar">
-  <img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo">
-  <button class="primaryOutline loginRedirect" href="./passport/login.hbs">LOG IN</button>
+  <a href="/"><img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo"></a>
+  <button class="primaryOutline loginRedirect" href="/login">LOG IN</button>
 </div>
 
 <div class="header">
-  <h1>Workouts that feel like...</h1>
-  <button class="primaryFillLarge signupRedirect" href="./passport/signup.hbs">Sign Up</button>
-</div>
+  {{!-- Bootstrap carousel --}}
+  <div id="gifCarousel" class="carousel" data-ride="carousel" data-interval="2800" style="height: 300px; width: 100%; margin: 0 auto">
+  <div class="carousel-inner">
+      <div class="carousel-item active gif">
+        <img class="d-block w-100" src="/images/gif/excited1.gif" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="/images/gif/excited2.gif" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="/images/gif/excited3.gif" alt="Second slide">
+      </div>
+    </div>
+  </div>
+
+  <div class="covertext">
+    <div class="col-lg-10" style="float:none; margin:0 auto;">
+      <h1 class="title">Workouts that feel like...</h1>
+    </div>
+    <div class="col-xs-12 headerButton">
+      <a href="/signup"><button type="button" class="btn btn-lg primaryFillLarge signupRedirect">Sign Up</button></a>
+    </div>
+  </div>
 
 <div class="sectionOneIcons">
   <div class="sectionHeader">

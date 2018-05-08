@@ -139,7 +139,9 @@ a {
   margin-right: 60px; }
 
 .footerContent h4 {
-  margin: 0 0 0 0; }
+  margin: 0 0 0 0;
+  font-size: 18px;
+  font-weight: 700; }
 
 .withLove {
   display: flex; }
@@ -147,6 +149,19 @@ a {
 .withLove img {
   margin-left: 5px;
   margin-right: 5px; }
+
+.carousel-item {
+  height: 500px;
+  align-items: center; }
+
+.carousel-item img {
+  max-width: 100%;
+  position: absolute;
+  top: 10;
+  bottom: 10;
+  left: 0;
+  right: 0;
+  margin: auto; }
 
 .signupContainer h2 {
   margin-top: 60px;
@@ -168,13 +183,12 @@ a {
 
 .form-container input {
   height: 40px;
-  width: 250px;
+  width: 300px;
   border: 1px solid #BBBBBB;
   color: #141E14;
   font-size: 14px;
   font-weight: 300;
-  padding-left: 15px;
-  display: block; }
+  padding-left: 15px; }
 
 .form-container p {
   font-size: 14px;
@@ -188,8 +202,5 @@ a {
 
 .formRow {
   margin-bottom: 30px; }
-
-.nameRow {
-  justify-content: space-between; }
 
 /*# sourceMappingURL=style.css.map */
