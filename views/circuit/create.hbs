@@ -23,6 +23,7 @@
       <div class="row exerciseContainer col-sm-3">
           <img src="{{this.imageURL}}" alt="Illustration of {{this.name}}.">
           <h4>{{this.name}}</h4>
+          <input id="exerciseId" type="hidden" name="id" value="{{this._id}}">
       </div>
     {{/each}}
   </div>
