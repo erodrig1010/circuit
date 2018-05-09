@@ -7,9 +7,15 @@ const Circuit        = require("../models/circuit");
 
 
 // Gets all the exercises from the database and renders the create page
-router.get('/:id', ensureLogin.ensureLoggedIn(),(req,res,next)=>{
-  const id = req.params.id;
-  res.render(`user/dashboard`, { user: req.user})
+router.get('/create', ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  // console.log(req)
+  //console.log( Exercise)
+  Exercise.find({}, (err, oneExercise) => {    
+    if (err) {
+      return next(err);
+    }
+    res.render(`circuit/create`, { user: req.user, exercise: oneExercise })
+  })
 })
 
 

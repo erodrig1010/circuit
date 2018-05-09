@@ -58,6 +58,16 @@ a {
   width: 100%;
 }
 
+.container-fluid {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 
 
 // Buttons
@@ -145,6 +155,10 @@ a {
   justify-content: space-between;
 }
 
+.navbar h4 {
+  color: #D9FF00;
+  text-transform: uppercase;
+}
 
 // Footer CSS
 .footer {
@@ -276,3 +290,35 @@ a {
   // width: 100%;
 }
 
+
+
+// Create Page CSS
+
+.exerciseContainer {
+  cursor: pointer;
+  border: 2px solid #141E14;
+  padding: 10px 10px;
+  // display: inline;
+  justify-content: center;
+  align-items: center;
+}
+
+.exerciseContainer h4 {
+  text-transform: uppercase;
+}
+
+.exerciseContainer img {
+  width: 200px;
+}
+
+.selected { 
+  border: 2px solid #FF3030;
+}
+
+
+
+// Dashboard CSS
+.circuitContainer {
+  padding-left: 0;
+  padding-right: 0;
+}

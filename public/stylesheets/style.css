@@ -37,6 +37,14 @@ a {
   padding: 20px;
   width: 100%; }
 
+.container-fluid {
+  padding-left: 60px;
+  padding-right: 60px; }
+
+.row {
+  margin-left: 0;
+  margin-right: 0; }
+
 .primaryOutline {
   border: 2px solid #D9FF00;
   background-color: Transparent;
@@ -111,6 +119,10 @@ a {
   padding-right: 60px;
   display: flex;
   justify-content: space-between; }
+
+.navbar h4 {
+  color: #D9FF00;
+  text-transform: uppercase; }
 
 .footer {
   width: 100%;
@@ -202,5 +214,25 @@ a {
 
 .formRow {
   margin-bottom: 30px; }
+
+.exerciseContainer {
+  cursor: pointer;
+  border: 2px solid #141E14;
+  padding: 10px 10px;
+  justify-content: center;
+  align-items: center; }
+
+.exerciseContainer h4 {
+  text-transform: uppercase; }
+
+.exerciseContainer img {
+  width: 200px; }
+
+.selected {
+  border: 2px solid #FF3030; }
+
+.circuitContainer {
+  padding-left: 0;
+  padding-right: 0; }
 
 /*# sourceMappingURL=style.css.map */

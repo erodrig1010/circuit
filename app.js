@@ -24,7 +24,7 @@ const Circuit          = require("./models/circuit");
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/circuit', {useMongoClient: true})
+  .connect(process.env.MONGOURI, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
@@ -53,9 +53,12 @@ app.use(require('node-sass-middleware')({
 
 
 app.use(session({
-  secret: "our-passport-local-strategy-app",
-  resave: true,
-  saveUninitialized: true
+  secret: "basic-auth-secret",
+  cookie: { maxAge: 60000 },
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60 // 1 day
+  })
 }));
       
 
@@ -115,8 +118,11 @@ app.use('/', index);
 const authRoutes = require("./routes/auth-routes");
 app.use('/', authRoutes);
 
-// const userRoutes = require("./routes/user-routes");
-// app.use('/', userRoutes);
+const circuitRoutes = require("./routes/circuit-routes");
+app.use(`/circuit`, circuitRoutes);
+
+const userRoutes = require("./routes/user-routes");
+app.use(`/user`, userRoutes);
 
 
 module.exports = app;

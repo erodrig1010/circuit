@@ -1,0 +1,30 @@
+<div class="navbar">
+  <a href="/"><img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo"></a>
+  <h4>HI, {{user.firstname}}</h4>
+</div>
+
+<div class="container-fluid">
+  <div class="row headerRow">
+    <div class="sectionHeader">
+      <h2>My Circuits</h2>
+    </div>
+    <div class="nextContainer">
+      <a href="/circuit/create"><button class="primaryFill create" id="createRedirectButton">+  CREATE A CIRCUIT</button></a>
+    </div>
+  </div>
+
+  <div class="row myCircuits">
+    <div class="circuitContainer col-sm-4">
+      <div class="circuitContainerTitle">
+        <h4>FULL BODY BEGINNER WITH WEIGHTS 30 MINUTES CIRCUIT</h4>
+      </div>
+      <div class="circuitContainerBody">
+        <p><strong># of Exercises:</strong> # </p>
+        <p><strong>Rest Time:</strong> # seconds </p>
+        <p><strong>Weighted?</strong> Yes/No</p>
+        <a href="circuit/details"><button class="primaryFill edit" id="editRedirectButton">EDIT</button></a>
+        <button class="primaryFill delete" id="deletetButton">DELETE</button>
+      </div>
+    </div>
+  </div>
+</div>
