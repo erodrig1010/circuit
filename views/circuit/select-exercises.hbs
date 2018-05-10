@@ -7,34 +7,38 @@
 </div>
 
 <div class="container-fluid">
-  <div class="row headerRow">
-    <div class="sectionHeader">
+
+  <div class="row headerRow justify-content-start" id="pickHeaderContainer">
+    <div class="sectionHeader" id="pickExercisesHeader">
       <h2>Pick Your Exercises</h2>
     </div>
     <div class="nextContainer">
-      <h4 class="numberOfExercises" style="color:#FF3030;"></h4><h4>EXERCISES ADDED</h4>
+      <h4 class="numberOfExercises" style="color:#FF3030;"> </h4><h4>EXERCISES ADDED</h4>
       <a href="/circuit/create"></a><button class="primaryFill next" id="nextButton">NEXT</button></a>
     </div>
   </div>
 
-  <div class="row category">
+  {{!-- <div class="row category">
     <h3>FULL BODY</h3>
-  </div>
+  </div> --}}
 
   <div class="row fullExercises">
     {{#each exercise}}
-      <div class="row exerciseContainer col-sm-3">
-          <img src="{{this.imageURL}}" alt="Illustration of {{this.name}}.">
-          <h4>{{this.name}}</h4>
-          <input id="exerciseId" type="hidden" name="id" value="{{this._id}}">
+      <div class="card row exerciseContainer col-md-3">
+        <img class="card-img-top" src="{{this.imageURL}}" alt="Card image cap">
+        <div class="card-body circuitInfo row">
+          <h4 class="card-text">{{this.name}}</h4>
+        </div>
+        <input id="exerciseId" type="hidden" name="id" value="{{this._id}}">
       </div>
     {{/each}}
   </div>
-  {{!-- <button class="primaryFill next" id="nextButton" type="submit">NEXT</button> --}}
+
+</div>
 <form action="/circuit/create" id="selectExercisesForm" method="post">
 </form>
 
-  <div class="row category">
+  {{!-- <div class="row category">
     <h3>LOWER BODY</h3>
   </div>
   <div class="row fullExercises">
@@ -46,5 +50,4 @@
   </div>
   <div class="row fullExercises">
     
-  </div>
-</div>
+  </div> --}}

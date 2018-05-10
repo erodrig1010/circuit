@@ -326,33 +326,100 @@ form {
   color: #141E14;
   padding: 60px 60px 60px 60px !important; }
 
+#pickExercisesHeader {
+  text-align: left;
+  margin-right: 30px; }
+
+.nextContainer {
+  padding-left: 0;
+  padding-right: 0;
+  border: 2px solid #141E14;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  padding: 20px 20px; }
+
+#pickHeaderContainer {
+  justify-content: space-between !important; }
+
+.nextContainer h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 20px; }
+
+.fullExercises {
+  justify-content: flex-start; }
+
 .exerciseContainer {
   cursor: pointer;
   border: 2px solid #141E14;
+  border-radius: 0;
   padding: 10px 10px;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin: 5px 5px; }
 
 .exerciseContainer h4 {
   text-transform: uppercase; }
 
 .exerciseContainer img {
-  width: 200px; }
+  width: 100%; }
 
 .selected {
   border: 2px solid #FF3030; }
 
+#selectExercisesForm {
+  border: none; }
+
+.circuitInfo {
+  align-items: center; }
+
+.createCircuitContainer {
+  justify-content: center; }
+
 .exerciseSelected img {
   width: 200px; }
 
+.circuit-form input {
+  margin-left: 20px;
+  border: 2px solid #141E14;
+  border-radius: 0;
+  color: #141E14;
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 15px;
+  height: 40px; }
+
+.nameOfCircuit {
+  width: 40%; }
+
+hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #141E14;
+  padding: 0; }
+
 .circuitContainer {
   padding-left: 0;
-  padding-right: 0; }
+  padding-right: 0;
+  border: 2px solid #141E14;
+  border-radius: 0;
+  margin-bottom: 30px; }
 
 .headerRow {
-  align-items: center; }
+  align-items: center;
+  justify-content: flex-start; }
 
 #myCircuitsHeader {
-  text-align: left; }
+  text-align: left;
+  margin-right: 30px; }
+
+.circuitContainerTitle {
+  background-color: #141E14;
+  border-radius: 0;
+  color: #D9FF00; }
+
+.edit {
+  margin-right: 20px; }
 
 /*# sourceMappingURL=style.css.map */
