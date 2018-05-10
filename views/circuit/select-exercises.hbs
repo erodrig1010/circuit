@@ -1,0 +1,47 @@
+<div class="navbar">
+  <a href="/"><img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo"></a>
+  <h4>HI, {{user.firstname}}</h4>
+</div>
+
+<div class="container-fluid">
+  <div class="row headerRow">
+    <div class="sectionHeader">
+      <h2>Pick Your Exercises</h2>
+    </div>
+    <div class="nextContainer">
+      <h4 class="numberOfExercises" style="color:#FF3030;"></h4><h4>EXERCISES ADDED</h4>
+      <a href="/circuit/create"></a><button class="primaryFill next" id="nextButton">NEXT</button></a>
+    </div>
+  </div>
+
+  <div class="row category">
+    <h3>FULL BODY</h3>
+  </div>
+
+  <div class="row fullExercises">
+    {{#each exercise}}
+      <div class="row exerciseContainer col-sm-3">
+          <img src="{{this.imageURL}}" alt="Illustration of {{this.name}}.">
+          <h4>{{this.name}}</h4>
+          <input id="exerciseId" type="hidden" name="id" value="{{this._id}}">
+      </div>
+    {{/each}}
+  </div>
+  {{!-- <button class="primaryFill next" id="nextButton" type="submit">NEXT</button> --}}
+<form action="/circuit/create" id="selectExercisesForm" method="post">
+</form>
+
+  <div class="row category">
+    <h3>LOWER BODY</h3>
+  </div>
+  <div class="row fullExercises">
+    
+  </div>
+
+  <div class="row category">
+    <h3>UPPER BODY</h3>
+  </div>
+  <div class="row fullExercises">
+    
+  </div>
+</div>

@@ -6,7 +6,7 @@ const userSchema = new Schema({
   lastname: { type: String, required: true},
   email: { type: String, required: true, unique: true},
   password: { type: String, required: true},
-  circuit: {type: mongoose.Schema.Types.ObjectId, ref: 'Circuit'}
+  circuit: [{type: mongoose.Schema.Types.ObjectId, ref: 'Circuit'}]
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });

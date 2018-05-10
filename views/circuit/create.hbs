@@ -4,41 +4,41 @@
 </div>
 
 <div class="container-fluid">
+
   <div class="row headerRow">
     <div class="sectionHeader">
-      <h2>Pick Your Exercises</h2>
-    </div>
-    <div class="nextContainer">
-      <h4># EXERCISES ADDED</h4>
-      <button class="primaryFill next" id="nextButton" href="/create/details">NEXT</button>
+      <h2>Circuit Details</h2>
     </div>
   </div>
 
-  <div class="row category">
-    <h3>FULL BODY</h3>
-  </div>
+  <form action="/finish-create/{{circuit._id}}" id="new-circuit-form" class="circuit-form" method="post">
+    <div class="row question">
+      <h4>How many reps of each exercise?</h4>
+    </div>
+{{#each excercises }}
+    <div class="exerciseSelected">
+      <img src="{{this.imageURL}}" alt="Exercise illustration.">
+      <input type="number" class="exerciseReps" name="exerciseReps" placeholder="# of reps"> <h4>{{this.name}}</h4>
+      <input type="number" class="exerciseWeight" name="exerciseWeight" placeholder="lbs"> <p>lbs (optional)</p>
+    </div>
+    <hr>
+{{/each }}
+    <div class="row question">
+      <h4>How many sets do you want to complete?</h4>
+      <input type="number" class="numberOfSets" name="numberOfSets" placeholder="# of sets">
+    </div>
 
-  <div class="row fullExercises">
-    {{#each exercise}}
-      <div class="row exerciseContainer col-sm-3">
-          <img src="{{this.imageURL}}" alt="Illustration of {{this.name}}.">
-          <h4>{{this.name}}</h4>
-          <input id="exerciseId" type="hidden" name="id" value="{{this._id}}">
-      </div>
-    {{/each}}
-  </div>
+    <div class="row question">
+      <h4>How much rest time do you want between sets?</h4>
+      <input type="number" class="restTime" name="restTime" placeholder="seconds"> <p>seconds</p>
+    </div>
 
-  <div class="row category">
-    <h3>LOWER BODY</h3>
-  </div>
-  <div class="row fullExercises">
-    
-  </div>
+    <button id="create-circuit" class="primaryFill" type="submit">SAVE CIRCUIT</button>
+  </form>
 
-  <div class="row category">
-    <h3>UPPER BODY</h3>
-  </div>
-  <div class="row fullExercises">
-    
-  </div>
-</div>
+
+
+
+
+
+</div> {{!-- Close container-fluid --}}

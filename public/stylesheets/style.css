@@ -173,7 +173,8 @@ a {
   bottom: 10;
   left: 0;
   right: 0;
-  margin: auto; }
+  margin: auto;
+  opacity: 0.5; }
 
 .signupContainer h2 {
   margin-top: 60px;
@@ -230,6 +231,9 @@ a {
 
 .selected {
   border: 2px solid #FF3030; }
+
+.exerciseSelected img {
+  width: 200px; }
 
 .circuitContainer {
   padding-left: 0;
