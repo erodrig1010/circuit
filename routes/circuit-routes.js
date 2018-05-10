@@ -37,7 +37,9 @@ router.post(`/create`, (req, res, next) => {
       Exercise.findById(exercise)
       .then((theExercise) => {
         myExercises.push(theExercise)
+        console.log(theExercise)
       })
+      console.log(myExercises)
       res.render('circuit/create', {excercises: myExercises, circuit: newCircuit, user: req.user})
     })
   })  
@@ -52,19 +54,22 @@ router.post('/finish-create/:id', (req, res, next) => {
   const circuitId = req.params.id;
   Circuit.findById(circuitId)
   .then(theCircuit => {
+    console.log("THIS IS theCircuit=========================>", theCircuit)
     theCircuit.name = req.body.nameOfCircuit;
     theCircuit.sets = req.body.numberOfSets;
     theCircuit.rest = req.body.restTime;
     theCircuit.exercises = theCircuit.exercises;
-    theCircuit.owner = req.user._id;
+    theCircuit.createdby = req.user._id;
     theCircuit.save();
-    theCircuit.excercises.forEach(function(oneId){
+    theCircuit.exercises.forEach(function(oneId){
       Exercise.findById(oneId)
       .then(theExercise => {
         theExercise.reps = req.body.exerciseReps;
         theExercise.weight = req.body.exerciseWeight;
         theExercise.save()
-        res.redirect('/user/{{req.user._id}}')
+        console.log("THIS IS theCircuit again=========================>", theCircuit)
+        console.log("THIS IS theExercise=========================>", theExercise)
+        res.redirect(`/user/{{req.user._id}}`)
       })
       .catch(err => {
         console.log("Exercise save error: ", err)
@@ -76,5 +81,11 @@ router.post('/finish-create/:id', (req, res, next) => {
   })
 })
 
+router.get(`/user/{{req.user._id}}`, ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  Circuit.find({createdby: req.user._id}, (err, myCircuits) => {
+    if (err) { return next(err); }
+    res.render('user/dashboard', { circuits: myCircuits });
+  });
+});
 
 module.exports = router;

@@ -86,14 +86,6 @@ router.get("/logout", (req, res, next) => {
   res.redirect("/login");
 });
 
-// router.get("/logout", (req, res, next) => {
-//   // this destroys the session
-//   req.session.destroy((err) => {
-//     // cannot access session here
-//     res.redirect("/login");
-//   });
-// });
-
 
 
 module.exports = router;

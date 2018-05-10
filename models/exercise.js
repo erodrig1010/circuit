@@ -15,8 +15,8 @@ const exerciseSchema = new Schema({
     enum : ['Upper Body', 'Lower Body', 'Full Body'],
     default : 'Full Body',
   },
-  reps: { type: Number, required: true},
-  weight: { type: Number, default: 0},
+  reps: { type: Number},
+  weight: { type: Number},
   // owner: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   source: String
 });

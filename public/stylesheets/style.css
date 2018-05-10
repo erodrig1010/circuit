@@ -380,6 +380,9 @@ form {
 .exerciseSelected img {
   width: 200px; }
 
+.exerciseSelected h4 {
+  text-transform: uppercase; }
+
 .circuit-form input {
   margin-left: 20px;
   border: 2px solid #141E14;
