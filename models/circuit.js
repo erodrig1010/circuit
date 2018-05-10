@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
 
 const circuitSchema = new Schema({
-  exercises: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Exercise', min: 2, required: true},],
+  name: String,
+  exercises: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Exercise', min: 2, required: true}],
   sets: { type: Number},
   rest: { type: Number},
   createdby: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}

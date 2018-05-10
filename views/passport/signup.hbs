@@ -1,45 +1,46 @@
 <body bgcolor="#F7F7F7">
 
 
-<div class="navbar">
-  <a href="/"><img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo"></a>
-  <button class="primaryOutline" href="/login">LOG IN</button>
+<nav class="navbar">
+  <a class="navbar-brand" href="#">
+    <img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo">
+  </a>
+</nav>
+
+
+<div class="sectionHeader row">
+  <h2>Create your Circuit account.</h2>
 </div>
-
-
-<div class="signupContainer container">
-
-  <div class="sectionHeader row">
-    <h2>Create your Circuit account.</h2>
-  </div>
   
-  <form action="/signup" method="POST" class="form-container row col-sm-auto">
+<div class="signupContainer container row col-sm-auto">
+
+  <form action="/signup" method="POST" class="form-container col-sm-5">
 
     {{#if message}}
       <div class="error-message" id="error-message">{{ message }}</div>
     {{/if}}
 
-    <div class="name nameRow formRow">
+    <div class="name nameRow formRow col form-group">
       <label for="firstname">First Name</label>
-      <input id="firstname" type="text" name="firstname" placeholder="e.g., Ivanna">
+      <input class="form-control" id="firstname" type="text" name="firstname" placeholder="e.g., Ivanna">
     </div>
 
-    <div class="name nameRow formRow">
+    <div class="name nameRow formRow col form-group">
       <label for="lastname">Last Name</label>
-      <input id="lastname" type="text" name="lastname" placeholder="e.g., Workout">
+      <input class="form-control" id="lastname" type="text" name="lastname" placeholder="e.g., Workout">
     </div>
 
-    <div class="emailRow formRow">
+    <div class="emailRow formRow col form-group">
       <label for="email">Email</label>
-      <input id="email" type="email" name="email" placeholder="e.g., ilovecircuits@email.com">
+      <input class="form-control" id="email" type="email" name="email" placeholder="e.g., ilovecircuits@email.com">
     </div>
 
-    <div class="passwordRow formRow">
+    <div class="passwordRow formRow col form-group">
       <label for="password">Password</label>
-      <input id="password" type="password" name="password" placeholder="Create a strong password">
+      <input class="form-control" id="password" type="password" name="password" placeholder="Create a strong password">
     </div>
 
-    <button class="primaryFill signup" id="signupButton">Sign Up</button>
+    <button class="primaryFill signup col" id="signupButton">Sign Up</button>
 
     <p>Already have an account? <a href="/login">Login</a></p>
     {{!-- <p>By clicking the sign up button you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p> --}}

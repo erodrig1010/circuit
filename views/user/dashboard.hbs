@@ -1,19 +1,51 @@
 <div class="navbar">
   <a href="/"><img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo"></a>
-  <h4>HI, {{user.firstname}}</h4>
+  <div class="navRight">
+    <h4>HI, {{user.firstname}}</h4>
+    <a href="/logout"><img src="/images/icon/logout.svg" alt="Logout"></a>
+  </div>
 </div>
 
 <div class="container-fluid">
-  <div class="row headerRow">
-    <div class="sectionHeader">
+  <div class="row headerRow justify-content-start">
+    <div class="sectionHeader col-4" id="myCircuitsHeader">
       <h2>My Circuits</h2>
     </div>
-    <div class="nextContainer">
+    <div class="nextContainer col-4">
       <a href="/circuit/select-exercises"><button class="primaryFill create" id="createRedirectButton">+  CREATE A CIRCUIT</button></a>
     </div>
   </div>
 
-  <div class="row myCircuits">
+  <div class="row myCircuits"></div>
+    <div class="card circuitContainer col">
+      <div class="circuitContainerTitle">
+        <h4 class="card-header">FULL BODY BEGINNER WITH WEIGHTS 30 MINUTES CIRCUIT</h4>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text"><strong># of Exercises:</strong> ###</p>
+        <p class="card-text"><strong>Rest Time:</strong> ### seconds</p>
+        <p class="card-text"><strong>Weighted?</strong> Yes/No</p>
+        <a href="#"><button class="primaryFill edit" id="editRedirectButton">EDIT</button></a>
+        <a href="#"><button class="primaryFill delete" id="deletetButton">DELETE</button></a>
+      </div>
+    </div>
+    <div class="card circuitContainer col">
+      <div class="circuitContainerTitle">
+        <h4 class="card-header">FULL BODY BEGINNER WITH WEIGHTS 30 MINUTES CIRCUIT</h4>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text"><strong># of Exercises:</strong> ###</p>
+        <p class="card-text"><strong>Rest Time:</strong> ### seconds</p>
+        <p class="card-text"><strong>Weighted?</strong> Yes/No</p>
+        <a href="#"><button class="primaryFill edit" id="editRedirectButton">EDIT</button></a>
+        <a href="#"><button class="primaryFill delete" id="deletetButton">DELETE</button></a>
+      </div>
+    </div>
+  </div>
+
+  {{!-- <div class="row myCircuits">
     <div class="circuitContainer col-sm-4">
       <div class="circuitContainerTitle">
         <h4>FULL BODY BEGINNER WITH WEIGHTS 30 MINUTES CIRCUIT</h4>
@@ -22,9 +54,12 @@
         <p><strong># of Exercises:</strong> # </p>
         <p><strong>Rest Time:</strong> # seconds </p>
         <p><strong>Weighted?</strong> Yes/No</p>
-        <button class="primaryFill edit" id="editRedirectButton">EDIT</button>
-        <button class="primaryFill delete" id="deletetButton">DELETE</button>
+        <a href="#"><button class="btn primaryFill edit" id="editRedirectButton">EDIT</button></a>
+        <a href="#"><button class="btn primaryFill delete" id="deletetButton">DELETE</button></a>
       </div>
     </div>
-  </div>
-</div>
+  </div> --}}
+
+
+
+</div>  {{!-- Closes container-fluid div --}}

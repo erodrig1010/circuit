@@ -12,32 +12,33 @@ router.get('/select-exercises', ensureLogin.ensureLoggedIn(), (req, res, next) =
     if (err) {
       return next(err);
     }
-
-
     res.render(`circuit/select-exercises`, { user: req.user, exercise: oneExercise })
   })
 })
 
-router.get('/create', ensureLogin.ensureLoggedIn(), (req, res, next) => {
-  res.render(`circuit/create`, { user: req.user})
-})
+
+// router.get('/create', ensureLogin.ensureLoggedIn(), (req, res, next) => {
+//   res.render(`circuit/create`, { user: req.user})
+// })
+
 
 router.post(`/create`, (req, res, next) => {
-  console.log("THIS IS REQ.BODY: ", req.body)
+  console.log("THIS IS REQ.BODY=========================> ", req.body)
   const exercises = req.body.exercises;
   const newCircuit = new Circuit({
     exercises: exercises
   })
+
   newCircuit.save()
   .then((newCircuit) => {
-    console.log(newCircuit)
+    console.log("THIS IS newCircuit=========================> ",newCircuit)
     const myExercises = []
     newCircuit.exercises.forEach(function(exercise) {
       Exercise.findById(exercise)
       .then((theExercise) => {
         myExercises.push(theExercise)
       })
-      res.render('circuit/create', {excercises: myExercises, circuit: newCircuit})
+      res.render('circuit/create', {excercises: myExercises, circuit: newCircuit, user: req.user})
     })
   })  
   .catch((err) => {
@@ -47,10 +48,11 @@ router.post(`/create`, (req, res, next) => {
 
  
 router.post('/finish-create/:id', (req, res, next) => {
-  console.log("the second route")
+  console.log("=========================>the second route")
   const circuitId = req.params.id;
   Circuit.findById(circuitId)
   .then(theCircuit => {
+    theCircuit.name = req.body.nameOfCircuit;
     theCircuit.sets = req.body.numberOfSets;
     theCircuit.rest = req.body.restTime;
     theCircuit.exercises = theCircuit.exercises;

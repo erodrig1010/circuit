@@ -1,6 +1,9 @@
 <div class="navbar">
   <a href="/"><img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo"></a>
-  <h4>HI, {{user.firstname}}</h4>
+  <div class="navRight">
+    <h4>HI, {{user.firstname}}</h4>
+    <a href="/logout"><img src="/images/icon/logout.svg" alt="Logout"></a>
+  </div>
 </div>
 
 <div class="container-fluid">
@@ -12,6 +15,12 @@
   </div>
 
   <form action="/finish-create/{{circuit._id}}" id="new-circuit-form" class="circuit-form" method="post">
+
+    <div class="row question">
+      <h4>Name of your Circuit:</h4>
+      <input type="text" class="nameOfCircuit" name="nameOfCircuit" placeholder="Give it a name">
+    </div>
+
     <div class="row question">
       <h4>How many reps of each exercise?</h4>
     </div>

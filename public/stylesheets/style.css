@@ -23,11 +23,20 @@ p {
   font-weight: 500; }
 
 a {
-  color: #1B46FF; }
+  color: #1B46FF;
+  outline: none !important; }
+
+button {
+  outline: none !important; }
+
+a:focus {
+  outline: none !important; }
 
 .sectionHeader {
   text-align: center;
-  justify-content: center; }
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 60px; }
 
 .error-message {
   background: #FF3030;
@@ -111,6 +120,28 @@ a {
   font-weight: 700;
   font-size: 24px; }
 
+.delete {
+  border: 2px solid #FF3030;
+  background-color: #FF3030;
+  color: #FFFFFF;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  font-weight: 700;
+  font-size: 14px; }
+
+.delete:hover {
+  border: 2px solid #141E14;
+  background-color: #FF3030;
+  color: #FFF;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  font-weight: 700;
+  font-size: 14px; }
+
 .navbar {
   background-color: #141E14;
   padding-top: 15px;
@@ -118,11 +149,19 @@ a {
   padding-left: 60px;
   padding-right: 60px;
   display: flex;
-  justify-content: space-between; }
+  align-items: center; }
 
 .navbar h4 {
   color: #D9FF00;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin: 0; }
+
+.navRight {
+  display: flex; }
+
+.navRight img {
+  margin-left: 25px;
+  height: 25px; }
 
 .footer {
   width: 100%;
@@ -134,8 +173,7 @@ a {
   height: 1px;
   border: 0;
   border-top: 1px solid #D9FF00;
-  padding: 0;
-  width: 90%; }
+  padding: 0; }
 
 .footerContent {
   right: 0;
@@ -146,9 +184,7 @@ a {
   flex-wrap: nowrap;
   align-items: center;
   margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 60px;
-  margin-right: 60px; }
+  margin-bottom: 30px; }
 
 .footerContent h4 {
   margin: 0 0 0 0;
@@ -168,26 +204,89 @@ a {
 
 .carousel-item img {
   max-width: 100%;
-  position: absolute;
   top: 10;
   bottom: 10;
   left: 0;
   right: 0;
   margin: auto;
-  opacity: 0.5; }
+  opacity: .9;
+  background: rgba(0, 0, 0, 0.5); }
 
-.signupContainer h2 {
-  margin-top: 60px;
-  margin-bottom: 60px; }
+#gifCarousel {
+  z-index: -1;
+  position: absolute; }
 
-.form-container {
-  border: 1px solid #BBBBBB;
-  background-color: #FFFFFF;
-  margin: 0 auto;
-  width: 50%;
-  justify-content: center;
+.header {
+  height: 500px;
+  display: flex;
+  color: #D9FF00; }
+
+.covertext {
+  padding-top: 60px;
+  padding-bottom: 60px;
   align-items: center;
-  padding: 60px 60px; }
+  justify-content: center;
+  text-align: center; }
+
+.rowOfThreeIcons {
+  justify-content: space-evenly;
+  align-items: baseline;
+  text-align: center; }
+
+.rowOfThreeIcons h4 {
+  color: #FF3030; }
+
+.iconContainer {
+  margin-left: 15px;
+  margin-right: 15px; }
+
+.sectionTwoFaq {
+  background-color: #F7F7F7;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-top: 60px;
+  padding-bottom: 60px; }
+
+.question {
+  margin-bottom: 30px; }
+
+.sectionThreeSteps {
+  background-color: #141E14;
+  padding-bottom: 60px;
+  justify-content: space-evenly;
+  align-items: center; }
+
+.sectionThreeSteps h2 {
+  color: #FFFFFF; }
+
+.sectionThreeSteps h3 {
+  color: #D9FF00; }
+
+.sectionThreeSteps p {
+  color: #FFFFFF; }
+
+.steps {
+  align-items: center;
+  justify-content: space-evenly; }
+
+.textLeft {
+  padding: 0 0; }
+
+.imageRight {
+  padding: 0 0; }
+
+.imageRight img {
+  width: 350px; }
+
+.container {
+  padding-left: 0;
+  padding-right: 0; }
+
+.sectionFourCTA {
+  justify-content: center; }
+
+.signupContainer {
+  justify-content: center; }
 
 .form-container label {
   font-size: 18px;
@@ -196,8 +295,8 @@ a {
 
 .form-container input {
   height: 40px;
-  width: 300px;
   border: 1px solid #BBBBBB;
+  border-radius: 0;
   color: #141E14;
   font-size: 14px;
   font-weight: 300;
@@ -207,14 +306,25 @@ a {
   font-size: 14px;
   color: #BBBBBB;
   font-weight: 300;
-  margin: 0 0; }
+  margin: 0 0;
+  text-align: center; }
 
 .form-container button {
   margin-top: 30px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  height: 40px; }
 
 .formRow {
   margin-bottom: 30px; }
+
+.col {
+  padding: 0 0; }
+
+form {
+  border: 1px solid #BBBBBB;
+  border-radius: 0;
+  color: #141E14;
+  padding: 60px 60px 60px 60px !important; }
 
 .exerciseContainer {
   cursor: pointer;
@@ -238,5 +348,11 @@ a {
 .circuitContainer {
   padding-left: 0;
   padding-right: 0; }
+
+.headerRow {
+  align-items: center; }
+
+#myCircuitsHeader {
+  text-align: left; }
 
 /*# sourceMappingURL=style.css.map */

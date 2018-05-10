@@ -1,4 +1,4 @@
-// --- Colors ---
+//////////////////////////////////////////////////////////////////////////// Colors for reference
 // #D9FF00 = bright green
 // #FF3030 = red
 // #141E14 = dk grey
@@ -9,7 +9,8 @@
 // #1B46FF = link blue
 
 
-// General CSS
+
+//////////////////////////////////////////////////////////////////////////// General CSS
 body {
   font: 14px Avenir Next;
   margin: 0;
@@ -42,11 +43,22 @@ p {
 
 a {
   color: #1B46FF;
+  outline: none !important;
+}
+
+button {
+  outline: none !important;
+}
+
+a:focus {
+  outline: none !important;
 }
 
 .sectionHeader {
   text-align: center;
   justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .error-message {
@@ -66,11 +78,12 @@ a {
 .row {
   margin-left: 0;
   margin-right: 0;
+  // justify-content: center;
 }
 
 
 
-// Buttons
+//////////////////////////////////////////////////////////////////////////// Button CSS
 .primaryOutline {
   border: 2px solid #D9FF00;
   background-color: Transparent;
@@ -143,8 +156,33 @@ a {
   font-size: 24px;
 }
 
+.delete {
+  border: 2px solid #FF3030;
+  background-color: #FF3030;
+  color: #FFFFFF;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  font-weight: 700;
+  font-size: 14px;
+}
 
-// Top Nav CSS
+.delete:hover {
+  border: 2px solid #141E14;
+  background-color: #FF3030;
+  color: #FFF;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////// Top Nav CSS
 .navbar {
   background-color: #141E14;
   padding-top: 15px;
@@ -152,15 +190,28 @@ a {
   padding-left: 60px;
   padding-right: 60px;
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
+  align-items: center;
 }
 
 .navbar h4 {
   color: #D9FF00;
   text-transform: uppercase;
+  margin: 0;
 }
 
-// Footer CSS
+.navRight {
+  display: flex;
+}
+
+.navRight img {
+  margin-left: 25px;
+  height: 25px;
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////// Footer CSS
 .footer {
   // position: absolute;
   // bottom: 0;
@@ -175,7 +226,6 @@ a {
   border: 0;
   border-top: 1px solid #D9FF00;
   padding: 0;
-  width: 90%;
 }
 
 .footerContent {
@@ -188,8 +238,8 @@ a {
   align-items: center;
   margin-top: 30px;
   margin-bottom: 30px;
-  margin-left: 60px;
-  margin-right: 60px;
+  // margin-left: 60px;
+  // margin-right: 60px;
 }
 
 .footerContent h4 {
@@ -209,8 +259,7 @@ a {
 
 
 
-// Landing Page CSS
-
+//////////////////////////////////////////////////////////////////////////// Landing Page CSS
 .carousel-item {
   height: 500px;
   align-items: center;
@@ -218,31 +267,114 @@ a {
 
 .carousel-item img { 
   max-width: 100%; 
-  position: absolute;  
   top: 10;  
   bottom: 10;  
   left: 0;  
   right: 0;  
   margin: auto;
-  opacity: 0.5;
+  opacity: .9;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-
-
-// Sign Up Page CSS
-.signupContainer h2 {
-  margin-top: 60px;
-  margin-bottom: 60px;
+#gifCarousel {
+  z-index: -1;
+  position: absolute; 
 }
 
-.form-container {
-  border: 1px solid #BBBBBB;
-  background-color: #FFFFFF;
-  margin: 0 auto;
-  width: 50%;
-  justify-content: center;
+.header {
+  height: 500px;
+  display: flex;
+  color: #D9FF00
+}
+
+.covertext {
+  padding-top: 60px;
+  padding-bottom: 60px;
   align-items: center;
-  padding: 60px 60px;
+  justify-content: center;
+  text-align: center;
+}
+
+.sectionOneIcons {
+}
+
+.rowOfThreeIcons {
+  justify-content: space-evenly;
+  align-items: baseline;
+  text-align: center;
+}
+
+.rowOfThreeIcons h4 {
+  color: #FF3030;
+}
+
+.iconContainer {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.sectionTwoFaq {
+  background-color: #F7F7F7;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-top: 60px;
+  padding-bottom: 60px;
+}
+
+.question {
+  margin-bottom: 30px;
+}
+
+.sectionThreeSteps {
+  background-color: #141E14;
+  padding-bottom: 60px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sectionThreeSteps h2 {
+  color: #FFFFFF
+}
+
+.sectionThreeSteps h3 {
+  color: #D9FF00;
+}
+
+.sectionThreeSteps p {
+  color: #FFFFFF
+}
+
+.steps {
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.textLeft {
+  padding: 0 0;
+}
+
+.imageRight {
+  padding: 0 0 ;
+}
+
+.imageRight img {
+  width: 350px;
+}
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sectionFourCTA {
+  justify-content: center;
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////// Sign Up and Login Page CSS
+.signupContainer {
+  justify-content: center;
 }
 
 .form-container label {
@@ -253,13 +385,12 @@ a {
 
 .form-container input {
   height: 40px;
-  width: 300px;
   border: 1px solid #BBBBBB;
+  border-radius: 0;
   color: #141E14;
   font-size: 14px;
   font-weight: 300;
   padding-left: 15px;
-  // display: block;
 }
 
 .form-container p {
@@ -267,34 +398,33 @@ a {
   color: #BBBBBB;
   font-weight: 300;
   margin: 0 0;
+  text-align: center;
 }
 
 .form-container button {
   margin-top: 30px;
   margin-bottom: 15px;
+  height: 40px;
 }
 
 .formRow {
   margin-bottom: 30px;
 }
 
-.nameRow {
-  // display: flex;
-  // justify-content: space-between;
-  // width: 100%;
+.col {
+  padding: 0 0;
 }
 
-.emailRow {
-  // width: 100%;
-}
-
-.passwordRow {
-  // width: 100%;
+form {
+  border: 1px solid #BBBBBB;
+  border-radius: 0;
+  color: #141E14;
+  padding: 60px 60px 60px 60px !important;
 }
 
 
 
-// Create Page CSS
+//////////////////////////////////////////////////////////////////////////// Select Exercises Page CSS
 .exerciseContainer {
   cursor: pointer;
   border: 2px solid #141E14;
@@ -318,15 +448,23 @@ a {
 
 
 
-// Details Page
+//////////////////////////////////////////////////////////////////////////// Create CSS
 .exerciseSelected img {
   width: 200px;
 }
 
 
 
-// Dashboard CSS
+//////////////////////////////////////////////////////////////////////////// Dashboard Page CSS
 .circuitContainer {
   padding-left: 0;
   padding-right: 0;
+}
+
+.headerRow {
+  align-items: center;
+}
+
+#myCircuitsHeader {
+  text-align: left
 }
