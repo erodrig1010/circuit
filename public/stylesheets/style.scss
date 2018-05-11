@@ -612,3 +612,22 @@ hr {
 .exerciseReps {
   text-transform: uppercase;
 }
+
+.selectedExerciseRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.infoDiv {
+  display: flex;
+  flex-direction: column;
+  height: 340px;
+}
+
+.repsInfoDiv {
+  display: flex;
+  flex-direction: column;
+  height: 190px;
+  padding-left: 100px;
+  padding-top: 20px;
+}

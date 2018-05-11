@@ -29,7 +29,7 @@
     <h4>Exercises:</h4>
     
     <div class="selectedExerciseRow">
-      <div class="exerciseImageName">
+      <div class="exerciseImageName infoDiv">
         {{#each exercises}}
           <div class="exercisePreview row">
             <div class="exerciseImage">
@@ -42,13 +42,14 @@
           <hr>
         {{/each}}
       </div>
-      {{!-- <div class="exerciseRepsWeight">
+      <div>
         {{#each theReps}}
+      <div class="exerciseRepsWeight repsInfoDiv">
           <h4 class="previewReps">Reps: {{this.reps}}</h4>
           <h4 class="previewWeight">Weight: {{this.weight}}</h4>
+      </div>
         {{/each}}
-      </div> --}}
-      
+      </div>
     </div> 
   </div>      
 
