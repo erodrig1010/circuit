@@ -17,47 +17,20 @@
   </div>
 
   <div class="row myCircuits"></div>
+    {{#each circuits}}
     <div class="card circuitContainer">
       <div class="circuitContainerTitle">
-        <h4 class="card-header">FULL BODY BEGINNER WITH WEIGHTS 30 MINUTES CIRCUIT</h4>
+        <h4 class="card-header">{{this.name}}</h4>
       </div>
       <div class="card-body">
-        <p class="card-text"><strong># of Exercises:</strong> ###</p>
-        <p class="card-text"><strong>Rest Time:</strong> ### seconds</p>
-        <p class="card-text"><strong>Weighted?</strong> Yes/No</p>
+        <p class="card-text"><strong># of Exercises:</strong> {{this.exercises.length}}</p>
+        <p class="card-text"><strong>Rest Time:</strong> {{this.rest}}</p>
         <a href="#"><button class="primaryFill edit" id="editRedirectButton">EDIT</button></a>
         <a href="#"><button class="primaryFill delete" id="deletetButton">DELETE</button></a>
       </div>
     </div>
-    <div class="card circuitContainer col">
-      <div class="circuitContainerTitle">
-        <h4 class="card-header">FULL BODY BEGINNER WITH WEIGHTS 30 MINUTES CIRCUIT</h4>
-      </div>
-      <div class="card-body">
-        <p class="card-text"><strong># of Exercises:</strong> ###</p>
-        <p class="card-text"><strong>Rest Time:</strong> ### seconds</p>
-        <p class="card-text"><strong>Weighted?</strong> Yes/No</p>
-        <a href="#"><button class="primaryFill edit" id="editRedirectButton">EDIT</button></a>
-        <a href="#"><button class="primaryFill delete" id="deletetButton">DELETE</button></a>
-      </div>
-    </div>
+    {{/each}}
   </div>
-
-  {{!-- <div class="row myCircuits">
-    <div class="circuitContainer col-sm-4">
-      <div class="circuitContainerTitle">
-        <h4>FULL BODY BEGINNER WITH WEIGHTS 30 MINUTES CIRCUIT</h4>
-      </div>
-      <div class="circuitContainerBody">
-        <p><strong># of Exercises:</strong> # </p>
-        <p><strong>Rest Time:</strong> # seconds </p>
-        <p><strong>Weighted?</strong> Yes/No</p>
-        <a href="#"><button class="btn primaryFill edit" id="editRedirectButton">EDIT</button></a>
-        <a href="#"><button class="btn primaryFill delete" id="deletetButton">DELETE</button></a>
-      </div>
-    </div>
-  </div> --}}
-
 
 
 </div>  {{!-- Closes container-fluid div --}}

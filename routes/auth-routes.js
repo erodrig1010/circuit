@@ -62,7 +62,7 @@ router.post("/signup", (req, res, next) => {
       if (err) {
         res.render("passport/signup", { message: "Something went wrong. Try again." });
       } else {
-        res.redirect("/");
+        res.redirect("/login");
       }
     });
   });
@@ -73,12 +73,22 @@ router.get("/login", (req, res, next) => {
   res.render("passport/login", { "message": req.flash("error") });
 });
 
+// router.post("/login", passport.authenticate("local", {
+//   successRedirect: "/circuit/user/" + req.user._id,
+//   failureRedirect: "/login",
+//   failureFlash: true,
+//   passReqToCallback: true
+// }));
+
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/circuit/user/",
   failureRedirect: "/login",
   failureFlash: true,
   passReqToCallback: true
 }));
+router.get("/circuit/user", (req,res,next) => {
+  res.redirect('/circuit/user/'+req.user._id)
+});
 
 router.get("/logout", (req, res, next) => {
   req.logout();

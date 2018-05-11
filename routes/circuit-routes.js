@@ -17,11 +17,6 @@ router.get('/select-exercises', ensureLogin.ensureLoggedIn(), (req, res, next) =
 })
 
 
-// router.get('/create', ensureLogin.ensureLoggedIn(), (req, res, next) => {
-//   res.render(`circuit/create`, { user: req.user})
-// })
-
-
 router.post(`/create`, (req, res, next) => {
   console.log("THIS IS REQ.BODY=========================> ", req.body)
   const exercises = req.body.exercises;
@@ -67,9 +62,7 @@ router.post('/finish-create/:id', (req, res, next) => {
         theExercise.reps = req.body.exerciseReps;
         theExercise.weight = req.body.exerciseWeight;
         theExercise.save()
-        console.log("THIS IS theCircuit again=========================>", theCircuit)
-        console.log("THIS IS theExercise=========================>", theExercise)
-        res.redirect(`/user/{{req.user._id}}`)
+        res.redirect("/circuit/user/" + req.user._id)
       })
       .catch(err => {
         console.log("Exercise save error: ", err)
@@ -81,7 +74,8 @@ router.post('/finish-create/:id', (req, res, next) => {
   })
 })
 
-router.get(`/user/{{req.user._id}}`, ensureLogin.ensureLoggedIn(), (req, res, next) => {
+router.get("/user/:id", ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  console.log("im here=========================>")
   Circuit.find({createdby: req.user._id}, (err, myCircuits) => {
     if (err) { return next(err); }
     res.render('user/dashboard', { circuits: myCircuits });
