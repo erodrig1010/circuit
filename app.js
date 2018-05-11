@@ -26,7 +26,7 @@ mongoose.Promise = Promise;
 mongoose
 // process.env.MONGODB_URI
 // mongodb://localhost/circuit
-  .connect("process.env.MONGODB_URI", {useMongoClient: true})
+  .connect("mongodb:process.env.MONGODB_URI", {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
