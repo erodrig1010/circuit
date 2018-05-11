@@ -1,5 +1,5 @@
 <div class="navbar">
-  <a href="/"><img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo"></a>
+  <a href="/circuit/user/{{user._id}}"><img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo"></a>
   <div class="navRight">
     <h4>HI, {{user.firstname}}</h4>
     <a href="/logout"><img src="/images/icon/logout.svg" alt="Logout"></a>
@@ -20,13 +20,19 @@
     {{#each circuits}}
     <div class="card circuitContainer">
       <div class="circuitContainerTitle">
-        <h4 class="card-header">{{this.name}}</h4>
+        <h4 class="card-header"><a href='/circuit/{{this._id}}'>{{this.name}}</a></h4>
       </div>
       <div class="card-body">
         <p class="card-text"><strong># of Exercises:</strong> {{this.exercises.length}}</p>
         <p class="card-text"><strong>Rest Time:</strong> {{this.rest}}</p>
-        <a href="#"><button class="primaryFill edit" id="editRedirectButton">EDIT</button></a>
-        <a href="#"><button class="primaryFill delete" id="deletetButton">DELETE</button></a>
+        {{!-- <input id="circuitId" type="hidden" name="circuitId" class="circuitId" value="{{this._id}}"> --}}
+        <form id="deleteContainer" action="/circuit/delete/{{this._id}}" method="post">
+          {{!-- <input type="submit" value="Delete"> --}}
+          <a href="/circuit/delete/{{this._id}}"><button class="primaryFill delete" id="deletetButton">DELETE</button></a>
+         {{!-- This does not need to be a button and it doesn't need to be inside the form. This is just for styling. --}}
+        </form>
+        {{!-- <button class="primaryFill edit" id="editRedirectButton">EDIT</button>
+        <button class="primaryFill delete" id="deletetButton">DELETE</button> --}}
       </div>
     </div>
     {{/each}}

@@ -58,27 +58,19 @@ router.post("/signup", (req, res, next) => {
       email: email,
       password: hashPass,
     });
-    newUser.save((err) => {
-      if (err) {
-        res.render("passport/signup", { message: "Something went wrong. Try again." });
-      } else {
-        res.redirect("/login");
-      }
-    });
+    newUser.save()
+    .then((theUser) => {
+      res.redirect('/circuit/user/' + theUser._id);
+    })
+    .catch((err) => {
+      res.render("passport/signup", { message: "Something went wrong. Try again." });
+    })
   });
 });
-
 
 router.get("/login", (req, res, next) => {
   res.render("passport/login", { "message": req.flash("error") });
 });
-
-// router.post("/login", passport.authenticate("local", {
-//   successRedirect: "/circuit/user/" + req.user._id,
-//   failureRedirect: "/login",
-//   failureFlash: true,
-//   passReqToCallback: true
-// }));
 
 router.post("/login", passport.authenticate("local", {
   successRedirect: "/circuit/user/",

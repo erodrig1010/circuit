@@ -1,7 +1,35 @@
 <div class="navbar">
-  <a href="/"><img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo"></a>
+  <a href="/circuit/user/{{user._id}}"><img src="/images/logo/circuit_logo_full.svg" alt="Circuit Logo"></a>
   <div class="navRight">
     <h4>HI, {{user.firstname}}</h4>
     <a href="/logout"><img src="/images/icon/logout.svg" alt="Logout"></a>
   </div>
 </div>
+
+
+
+<div class="container-fluid">
+
+  <div class="row headerRow">
+    <div class="sectionHeader">
+      <h2>{{circuit.name}}</h2>
+    </div>
+  </div>
+  <h4>Number of Sets:</h4><h4 style="color:#FF3030;">{{circuit.sets}}</h4>
+  <h4>Rest Between Sets:</h4><h4 style="color:#FF3030;">{{circuit.rest}} seconds</h4>
+
+  <h4>Exercises:</h4>
+  {{#each exercises}}
+  <h3>{{this.name}}</h3>
+  <img src="{{this.imageURL}}" alt="Exercise illustration.">
+  {{/each}}
+  <hr>
+
+  <a href="/circuit/user/{{user._id}}"><button id="doneWithCircuit" class="primaryFill">I'm done crushing this Circuit!</button></a>
+
+  </div> {{!-- Close createCircuitContainer --}}
+
+
+
+
+</div> {{!-- Close container-fluid --}}

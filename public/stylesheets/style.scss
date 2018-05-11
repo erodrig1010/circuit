@@ -480,6 +480,11 @@ form {
   border: none;
 }
 
+#deleteContainer {
+  border: none;
+  padding: 0 0 !important;
+}
+
 .circuitInfo {
   align-items: center;
 }
@@ -544,6 +549,10 @@ hr {
 .circuitContainerTitle {
   background-color: #141E14;
   border-radius: 0;
+  color: #D9FF00;
+}
+
+.circuitContainerTitle a {
   color: #D9FF00;
 }
 

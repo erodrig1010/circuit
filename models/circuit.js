@@ -3,7 +3,11 @@ const Schema   = mongoose.Schema;
 
 const circuitSchema = new Schema({
   name: { type: String},
-  exercises: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Exercise', min: 2, required: true}],
+  exercises: [{ 
+    id: mongoose.Schema.Types.ObjectId,
+    reps: Number,
+    weight: Number
+  }],
   sets: { type: Number},
   rest: { type: Number},
   createdby: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}

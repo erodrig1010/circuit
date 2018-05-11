@@ -29,28 +29,21 @@ $(document).ready(function() {
     $("#selectExercisesForm").submit()
   })
 
-  console.log("THIS IS THE IDS ARRAY #2=========================> ", ids);
 
-  // $('#new-circuit-form').submit(function(event) {
-  //   event.preventDefault();
-  //   const circuitInfo = {};
-  //     circuitInfo.exercises = {}
-  //     circuitInfo.reps = $('.exerciseReps').val();
-  //     circuitInfo.weight = $('.exerciseWeight').val();
-  //     circuitInfo.sets = $('.numberOfSets').val();
-  //     circuitInfo.rest = $('.restTime').val();
-
-  //   // circuit info become req.body in the .js
-  //   axios.post(`/circuit/create`, circuitInfo)
+  // $('#deleteButton').click(function() {
+  //   const circuitId = $('.circuitId').val()
+  //   console.log(circuitId)
+  //   if(!circuitId){ 
+  //     return 
+  //   }
+  //   axios.post(`/circuit/delete/${circuitId}`)
   //   .then(response => {
-  //     console.log("Circuit created successfully!", response)
+  //     console.log("Circuit deleted successfully!", response)
   //   })
   //   .catch(err => {
   //     console.log(err)
   //   })
-  //   ids = []
   // })
-
 
 
 });
