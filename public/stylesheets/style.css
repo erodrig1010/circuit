@@ -455,4 +455,22 @@ hr {
 .circuitTitle {
   text-transform: uppercase; }
 
+.sets {
+  margin-bottom: 15px; }
+
+.rest {
+  margin-bottom: 15px; }
+
+.exerciseImage img {
+  width: 200px; }
+
+.exercisePreview {
+  align-items: center; }
+
+#doneWithCircuit {
+  margin-top: 30px; }
+
+.exerciseReps {
+  text-transform: uppercase; }
+
 /*# sourceMappingURL=style.css.map */

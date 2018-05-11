@@ -18,7 +18,6 @@ router.get('/select-exercises', ensureLogin.ensureLoggedIn(), (req, res, next) =
 
 
 router.post(`/create`, (req, res, next) => {
-  console.log("THIS IS REQ.BODY=========================> ", req.body)
   const exercises = req.body.exercises.map((oneExercise) => {
     return {id: oneExercise, reps: 0, weight: 0}
   });
@@ -28,14 +27,11 @@ router.post(`/create`, (req, res, next) => {
 
   newCircuit.save()
   .then((newCircuit) => {
-    console.log("THIS IS newCircuit=========================> ",newCircuit)
     const myExercises = []
     newCircuit.exercises.forEach(function(exercise) {
       Exercise.findById(exercise.id)
       .then((theExercise) => {
         myExercises.push(theExercise)
-        console.log(theExercise)
-        console.log(myExercises)
         if(myExercises.length === newCircuit.exercises.length) {
           res.render('circuit/create', {excercises: myExercises, circuit: newCircuit, user: req.user})
         }
@@ -50,11 +46,9 @@ router.post(`/create`, (req, res, next) => {
  
 router.post('/finish-create/:id', (req, res, next) => {
   const exercisesArray = []
-  console.log("=========================>the second route")
   const circuitId = req.params.id;
   Circuit.findById(circuitId)
   .then(theCircuit => {
-    console.log("THIS IS theCircuit=========================>", theCircuit)
     theCircuit.name = req.body.nameOfCircuit;
     theCircuit.sets = req.body.numberOfSets;
     theCircuit.rest = req.body.restTime;
@@ -77,7 +71,6 @@ router.post('/finish-create/:id', (req, res, next) => {
         }
       })
     })
-   
   })
   .catch(err => {
     console.log("Circuit save error: ", err)
@@ -95,7 +88,7 @@ router.post("/delete/:id", (req, res, next) => {
   const circuitId = req.params.id
   const theCircuit = Circuit.findByIdAndRemove(circuitId)
   .then((circuit) => {
-    console.log("THIS GOT DELETED================> ", circuit)
+
   })
   .catch((err) => {
     console.log(err);
@@ -104,23 +97,54 @@ router.post("/delete/:id", (req, res, next) => {
 })
 
 
+// this pulls the image and name
 router.get('/:id', (req, res) => {
   const circuitId = req.params.id;
   const exercisesArray = [];
+  const theReps = [];
   Circuit.findById(circuitId)
     .then((circuit) => {
+      console.log("circuit ===============================" + circuit.exercises[0])
       circuit.exercises.forEach((oneExercise) => {
+        theReps.push(oneExercise);
+        console.log("oneExercise  +++++++++++++++++++++++++++++++++++" + oneExercise)
         Exercise.findById(oneExercise.id)
         .then((theExercise) => {
+          console.log("exercise >>>>>>>>>>><<<<<<<<<<<<<<<>>>>>><<<<<<" + theExercise)
           exercisesArray.push(theExercise)
           if(exercisesArray.length === circuit.exercises.length) {
-            res.render('circuit/preview', {circuit: circuit, user: req.user, exercises: exercisesArray})
+            res.render('circuit/preview', {circuit: circuit, user: req.user, exercises: exercisesArray, oneExercise: oneExercise, theReps: theReps})
             console.log("There is an error:", err);
           }
         })
       })
     })
   });
+
+// router.get('/:id', (req, res) => {
+  // const circuitId = req.params.id;
+  // const exercisesArray = [];
+  // const data = {
+  //   user: req.user
+  // };
+  // Circuit.findById(circuitId)
+  //   .then((circuit) => {
+  //     console.log(circuit.exercises[0].reps)
+  //     data.circuit = circuit
+  //     circuit.exercises.forEach((oneExercise) => {
+  //       Exercise.findById(oneExercise.id)
+  //       .then((theExercise) => {
+  //         data.theExercise = theExercise
+  //         exercisesArray.push(theExercise)
+  //         if(exercisesArray.length === circuit.exercises.length) {
+  //           res.render('circuit/preview', data)
+  //           console.log("=================this should be reps ", circuit.exercises)
+  //           console.log("There is an error:", err);
+  //         }
+  //       })
+  //     })
+  //   })
+  // });
 
 
 

@@ -24,7 +24,7 @@
       </div>
       <div class="card-body">
         <p class="card-text"><strong># of Exercises:</strong> {{this.exercises.length}}</p>
-        <p class="card-text"><strong>Rest Time:</strong> {{this.rest}}</p>
+        <p class="card-text"><strong>Rest Time:</strong> {{this.rest}} seconds</p>
         {{!-- <input id="circuitId" type="hidden" name="circuitId" class="circuitId" value="{{this._id}}"> --}}
         <form id="deleteContainer" action="/circuit/delete/{{this._id}}" method="post">
           {{!-- <input type="submit" value="Delete"> --}}

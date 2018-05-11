@@ -12,31 +12,66 @@
 
   <div class="row headerRow">
     <div class="sectionHeader circuitTitle">
-      <h2>{{circuit.name}} CIRCUIT</h2>
+      <h2>{{circuit.name}}</h2>
     </div>
   </div>
-  <h4>Number of Sets:</h4><h4 style="color:#FF3030;">{{circuit.sets}}</h4>
-  <h4>Rest Between Sets:</h4><h4 style="color:#FF3030;">{{circuit.rest}} seconds</h4>
 
-  <h4>Exercises:</h4>
-  <div class="exerciseList">
-  {{#each exercises}}
-      <div class="card row exerciseContainer col-md-3">
-        <img class="card-img-top" src="{{this.imageURL}}" alt="Card image cap">
-        <div class="card-body circuitInfo row">
-          <h4 class="card-text">{{this.name}}</h4>
-          <h4 class="card-text">{{circuit.exercises.reps}}REPS</h4>
-        </div>
-        <input id="exerciseId" type="hidden" name="id" value="{{this._id}}">
-      </div>
-    {{/each}}
+  <div class="sets row">
+    <h4>Number of Sets:</h4><h4 style="color:#FF3030;">&nbsp;{{circuit.sets}}</h4>
   </div>
 
-  <a href="/circuit/user/{{user._id}}"><button id="doneWithCircuit" class="primaryFill">I'm done crushing this Circuit!</button></a>
+  <div class="rest row">
+    <h4>Rest Between Sets:</h4><h4 style="color:#FF3030;">&nbsp;{{circuit.rest}} seconds</h4>
+  </div>
 
-  </div> {{!-- Close createCircuitContainer --}}
+  <div class="exerciseList">
+    
+    <h4>Exercises:</h4>
+    
+    <div class="selectedExerciseRow">
+      <div class="exerciseImageName">
+        {{#each exercises}}
+          <div class="exercisePreview row">
+            <div class="exerciseImage">
+              <img class="previewImage" src="{{this.imageURL}}" alt="Card image cap">
+            </div>
+            <div class="exerciseReps">
+              <h4>{{this.name}}</h4>
+            </div>
+          </div>
+          <hr>
+        {{/each}}
+      </div>
+      {{!-- <div class="exerciseRepsWeight">
+        {{#each theReps}}
+          <h4 class="previewReps">Reps: {{this.reps}}</h4>
+          <h4 class="previewWeight">Weight: {{this.weight}}</h4>
+        {{/each}}
+      </div> --}}
+      
+    </div> 
+  </div>      
+
+  <a href="/circuit/user/{{user._id}}"><button id="doneWithCircuit" class="primaryFillLarge">I'm done crushing this Circuit!</button></a>
+
 
 
 
 
 </div> {{!-- Close container-fluid --}}
+
+
+
+
+
+
+
+{{!-- card type styling for exercises --}}
+      {{!-- <div class="card row exerciseContainer col-md-3">
+        <img class="card-img-top" src="{{this.imageURL}}" alt="{{this.name}} illustration.">
+        <div class="card-body circuitInfo row">
+          <h4 class="card-text">{{this.name}}</h4>
+          <h4 class="card-text">{{circuit.exercises.reps}}REPS</h4>
+        </div>
+        <input id="exerciseId" type="hidden" name="id" value="{{this._id}}">
+      </div> --}}
