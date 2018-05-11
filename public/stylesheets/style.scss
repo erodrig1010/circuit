@@ -200,6 +200,16 @@ a:focus {
   margin: 0;
 }
 
+.navbar p {
+  color: #D9FF00;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.navbar a:hover {
+  text-decoration: none;
+}
+
 .navRight {
   display: flex;
 }
@@ -284,7 +294,8 @@ a:focus {
 .header {
   height: 500px;
   display: flex;
-  color: #D9FF00
+  color: #D9FF00;
+  justify-content: center;
 }
 
 .covertext {
@@ -296,6 +307,7 @@ a:focus {
 }
 
 .sectionOneIcons {
+  justify-content: center;
 }
 
 .rowOfThreeIcons {
@@ -319,10 +331,18 @@ a:focus {
   padding-right: 60px;
   margin-top: 60px;
   padding-bottom: 60px;
+  justify-content: center;
+}
+
+.faqContent {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .question {
   margin-bottom: 30px;
+  width: 70%
 }
 
 .sectionThreeSteps {
@@ -550,6 +570,7 @@ hr {
   background-color: #141E14;
   border-radius: 0;
   color: #D9FF00;
+  text-transform: uppercase;
 }
 
 .circuitContainerTitle a {
@@ -560,3 +581,10 @@ hr {
   margin-right: 20px;
 }
 
+
+
+//////////////////////////////////////////////////////////////////////////// Preview Page CSS
+
+.circuitTitle {
+  text-transform: uppercase;
+}

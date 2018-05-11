@@ -11,19 +11,26 @@
 <div class="container-fluid">
 
   <div class="row headerRow">
-    <div class="sectionHeader">
-      <h2>{{circuit.name}}</h2>
+    <div class="sectionHeader circuitTitle">
+      <h2>{{circuit.name}} CIRCUIT</h2>
     </div>
   </div>
   <h4>Number of Sets:</h4><h4 style="color:#FF3030;">{{circuit.sets}}</h4>
   <h4>Rest Between Sets:</h4><h4 style="color:#FF3030;">{{circuit.rest}} seconds</h4>
 
   <h4>Exercises:</h4>
+  <div class="exerciseList">
   {{#each exercises}}
-  <h3>{{this.name}}</h3>
-  <img src="{{this.imageURL}}" alt="Exercise illustration.">
-  {{/each}}
-  <hr>
+      <div class="card row exerciseContainer col-md-3">
+        <img class="card-img-top" src="{{this.imageURL}}" alt="Card image cap">
+        <div class="card-body circuitInfo row">
+          <h4 class="card-text">{{this.name}}</h4>
+          <h4 class="card-text">{{circuit.exercises.reps}}REPS</h4>
+        </div>
+        <input id="exerciseId" type="hidden" name="id" value="{{this._id}}">
+      </div>
+    {{/each}}
+  </div>
 
   <a href="/circuit/user/{{user._id}}"><button id="doneWithCircuit" class="primaryFill">I'm done crushing this Circuit!</button></a>
 

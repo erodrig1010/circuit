@@ -156,6 +156,14 @@ a:focus {
   text-transform: uppercase;
   margin: 0; }
 
+.navbar p {
+  color: #D9FF00;
+  text-transform: uppercase;
+  margin: 0; }
+
+.navbar a:hover {
+  text-decoration: none; }
+
 .navRight {
   display: flex; }
 
@@ -219,7 +227,8 @@ a:focus {
 .header {
   height: 500px;
   display: flex;
-  color: #D9FF00; }
+  color: #D9FF00;
+  justify-content: center; }
 
 .covertext {
   padding-top: 60px;
@@ -227,6 +236,9 @@ a:focus {
   align-items: center;
   justify-content: center;
   text-align: center; }
+
+.sectionOneIcons {
+  justify-content: center; }
 
 .rowOfThreeIcons {
   justify-content: space-evenly;
@@ -245,10 +257,17 @@ a:focus {
   padding-left: 60px;
   padding-right: 60px;
   margin-top: 60px;
-  padding-bottom: 60px; }
+  padding-bottom: 60px;
+  justify-content: center; }
+
+.faqContent {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap; }
 
 .question {
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  width: 70%; }
 
 .sectionThreeSteps {
   background-color: #141E14;
@@ -424,12 +443,16 @@ hr {
 .circuitContainerTitle {
   background-color: #141E14;
   border-radius: 0;
-  color: #D9FF00; }
+  color: #D9FF00;
+  text-transform: uppercase; }
 
 .circuitContainerTitle a {
   color: #D9FF00; }
 
 .edit {
   margin-right: 20px; }
+
+.circuitTitle {
+  text-transform: uppercase; }
 
 /*# sourceMappingURL=style.css.map */

@@ -25,7 +25,8 @@ const Circuit          = require("./models/circuit");
 mongoose.Promise = Promise;
 mongoose
 // process.env.MONGODB_URI
-  .connect("mongodb://localhost/circuit", {useMongoClient: true})
+// mongodb://localhost/circuit
+  .connect("process.env.MONGODB_URI", {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
